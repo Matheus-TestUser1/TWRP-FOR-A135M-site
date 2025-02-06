@@ -3,90 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TWRP for Samsung Galaxy A13 (SM-A135M)</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>Matheus-TestUser1 | TWRP for Samsung Galaxy A13</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --background-color: #f8fafc;
+            --text-color: #1e293b;
+            --card-background: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
         }
+
+        .navbar {
+            background-color: var(--card-background);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
         .hero {
-            background: url('https://source.unsplash.com/1600x900/?technology') no-repeat center center/cover;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('https://source.unsplash.com/1600x900/?technology,code') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
-            padding: 60px 0;
+            text-align: center;
+            margin-top: 60px;
         }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
         .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
         }
-        .container {
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin-top: -50px;
-            z-index: 1;
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: -100px auto 0;
+            padding: 2rem;
             position: relative;
         }
-        .section {
-            margin-bottom: 20px;
+
+        .card {
+            background: var(--card-background);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
+
+        .profile-section {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .profile-card {
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: var(--text-color);
+            font-size: 1.5rem;
+        }
+
         .button {
             display: inline-block;
-            font-size: 16px;
-            color: #fff;
-            background: #3498db;
-            padding: 10px 20px;
-            text-align: center;
-            border-radius: 4px;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 0.5rem;
             text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
         }
+
         .button:hover {
-            background: #2980b9;
+            background: var(--secondary-color);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: var(--card-background);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .stat-card h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .profile-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="hero text-center">
-        <h1>TWRP for Samsung Galaxy A13 (SM-A135M)</h1>
-    </div>
-    <div class="container">
-        <div class="section">
-            <p>Hi XDA community,</p>
-            <p>I am pleased to share a test version of TWRP Recovery compiled specifically for the Samsung Galaxy A13 (SM-A135M). Please note that this version is still in the testing phase, so use it responsibly.</p>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <h2>Matheus-TestUser1</h2>
+            </div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#twrp">TWRP</a>
+                <a href="#projects">Projects</a>
+                <a href="https://github.com/Matheus-TestUser1" target="_blank">GitHub</a>
+            </div>
         </div>
-        <div class="section">
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>TWRP for Samsung Galaxy A13</h1>
+            <p>Custom Recovery for SM-A135M</p>
+            <a href="https://github.com/Matheus-TestUser1/twrp-build/releases/download/9996416514/recovery.img" class="button">
+                <i class="fas fa-download"></i> Download TWRP
+            </a>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <div class="profile-section card">
+            <div class="profile-card">
+                <img src="https://github.com/Matheus-TestUser1.png" alt="Profile" class="profile-image">
+                <h2>Matheus</h2>
+                <p>Android Developer & TWRP Maintainer</p>
+                <div class="social-links">
+                    <a href="https://github.com/Matheus-TestUser1" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="about-content">
+                <h2>About the Project</h2>
+                <p>This is a test version of TWRP Recovery specifically compiled for the Samsung Galaxy A13 (SM-A135M). The project aims to provide a stable custom recovery solution for this device.</p>
+                <div class="stats">
+                    <div class="stat-card">
+                        <h3>SM-A135M</h3>
+                        <p>Device Model</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>TWRP</h3>
+                        <p>Recovery Type</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Testing</h3>
+                        <p>Current Status</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Installation Guide</h2>
+            <ol style="margin: 1rem 0 1rem 2rem;">
+                <li>Download the recovery image</li>
+                <li>Make sure you have USB debugging enabled</li>
+                <li>Install the recovery using Odin or Fastboot</li>
+                <li>Boot into recovery mode to verify installation</li>
+            </ol>
+            <div style="background: #fef3c7; padding: 1rem; border-radius: 0.5rem; margin-top: 1rem;">
+                <strong>⚠️ Disclaimer:</strong> Use at your own risk. I am not responsible for any damage to your device.
+            </div>
+        </div>
+
+        <div class="card">
             <h2>Credits</h2>
-            <p>I would like to thank the developers whose files and resources were essential for compiling this recovery:</p>
-            <ul>
-                <li><strong>Samsung</strong>: For providing the ROM files.</li>
-                <li><strong><a href="https://github.com/VThang51">VThang51</a></strong>: For the device tree for A135F, which I forked and ported to A135M.</li>
-                <li><strong><a href="https://github.com/Matheus-TestUser1/android_device_samsung_a135m">Matheus-TestUser1</a></strong>: For the device tree used in this build.</li>
+            <ul style="margin: 1rem 0 1rem 2rem;">
+                <li><strong>Samsung:</strong> For providing the ROM files</li>
+                <li><strong>VThang51:</strong> For the original A135F device tree</li>
+                <li><strong>Matheus-TestUser1:</strong> For the A135M port and maintenance</li>
             </ul>
         </div>
-        <div class="section">
-            <h2>Download Link</h2>
-            <p>You can download the TWRP recovery image from the following link:</p>
-            <a href="https://github.com/Matheus-TestUser1/twrp-build/releases/download/9996416514/recovery.img" class="button" target="_blank">Download recovery.img</a>
-        </div>
-        <div class="section">
-            <h2>Disclaimer</h2>
-            <p>I am not responsible for any damage that may occur to your device while using this test version of TWRP. Please ensure you have complete backups before performing any modifications.</p>
-        </div>
-        <div class="section">
-            <h2>Installation Instructions</h2>
-            <ol>
-                <li>Download the recovery image.</li>
-                <li>Install the recovery using your preferred method (e.g., via Odin or Fastboot).</li>
-            </ol>
-        </div>
-        <div class="section">
-            <p>Thank you all for your support and feedback. Please test and share your experiences!</p>
-        </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </main>
+
+    <script>
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
